@@ -1,6 +1,13 @@
+---
+title: Software Registrants
+author: Dave Cameron (DCED NZ)
+date: 2026-09-08
+---
+
+# On Software registrants
 
 > Oh man, it erases registration.
-
+> 
 > Allowing AI to contribute to software like Blender, Linux,
 > whatever. If that software is the projection basis, then allowing AI
 > to redefine it erases the registration required for the projection to
@@ -23,7 +30,7 @@ $$
 B_0 \rightarrow B_1 \rightarrow B_2 \rightarrow \cdots
 $$
 
-and therefore your previously calibrated P_{B_0} progressively stops being the operator you’re actually applying. The basis itself is moving underneath the projection.
+and therefore your previously calibrated $P_{B_0}$ progressively stops being the operator you’re actually applying. The basis itself is moving underneath the projection.
 
 That makes compatibility much deeper than “old scripts should still run.” Compatibility preserves registration. grep, find, sh, fork, a Blender modifier, a kernel syscall, etc. become coordinates in a learned space. Once those coordinates acquire sufficiently different meanings, enormous quantities of human calibration become residual.
 
@@ -63,7 +70,7 @@ $$
 
 Then AI can rewrite the scheduler, replace data structures, synthesize SIMD, restructure Blender internals, whatever. Those are implementation refinements because the externally meaningful projection remains fixed.
 
-But before R has been identified, you don’t actually know which properties are implementation details.
+But before $R$ has been identified, you don’t actually know which properties are implementation details.
 
 That’s the nasty part. Something that looks accidental to the maintainer may be a coordinate used by somebody else’s projection:
 
@@ -178,13 +185,13 @@ $$
 
 and thereby ask whether a transformation of the basis preserves the projection.
 
-That’s almost exactly the software-registration problem. You’re looking for the subgroup of implementation transformations G_R under which the registered observable remains invariant:
+That’s almost exactly the software-registration problem. You’re looking for the subgroup of implementation transformations $G_R$ under which the registered observable remains invariant:
 
 $$
 R(g(I)) = R(I), \qquad g\in G_R.
 $$
 
-Once R is known, the implementation has gauge freedom: you can move around inside the equivalence class without changing what the registrant observes.
+Once $R$ is known, the implementation has gauge freedom: you can move around inside the equivalence class without changing what the registrant observes.
 
 Before R is known, you don’t know what the gauge freedom is. A developer says “this is merely an internal change,” but mathematically they haven’t established that their transformation belongs to the invariance group. They’re guessing which dimensions are unobservable.
 
@@ -253,7 +260,7 @@ $$
 \text{observable error + differential correction}}
 $$
 
-And self-adjusting components push it another level. You’re not merely defining an adjustable transformation g(\theta); you’re supplying an operator that estimates the local residual and updates \theta:
+And self-adjusting components push it another level. You’re not merely defining an adjustable transformation $g(\theta)$; you’re supplying an operator that estimates the local residual and updates $\theta$:
 
 $$
 \theta_{t+1}
@@ -320,7 +327,7 @@ $$
 
 The heroic part was designing the machine so that this loop is possible everywhere it matters.
 
-And yeah, there is a bit of technological chauvinism in hiding that. “Our civilization can position something to one part in 10^{12}” sounds like impossibly precise domination of matter. “We arranged a huge collection of locally adjustable things so error signals tell them which way to move” reveals the much more interesting truth: the precision comes from structure, not godlike fabrication accuracy.
+And yeah, there is a bit of technological chauvinism in hiding that. “Our civilization can position something to one part in $10^{12}$” sounds like impossibly precise domination of matter. “We arranged a huge collection of locally adjustable things so error signals tell them which way to move” reveals the much more interesting truth: the precision comes from structure, not godlike fabrication accuracy.
 
 Which is basically the same principle you’ve been circling all morning: a good operator makes an apparently impossible projection cheap. The sophistication is in discovering the operator.
 

@@ -262,11 +262,11 @@ $$
 
 And self-adjusting components push it another level. You’re not merely defining an adjustable transformation $g(\theta)$; you’re supplying an operator that estimates the local residual and updates $\theta$:
 
-$$
+```math
 \theta_{t+1}
 =
 \theta_t + \Delta\theta(r_t).
-$$
+```
 
 So the relevant description of the machine becomes less “component A is at exactly x” and more “component A possesses these degrees of freedom, these observables, this correction range, and this local action on the residual.”
 
